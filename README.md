@@ -13,15 +13,11 @@ CentralADTools is a comprehensive PowerShell module designed to streamline and s
 
 ## Available Cmdlets and Functions
 
-- Get-ADUserInformation: Retrieve detailed information about AD user accounts.
-- New-ADUser: Create a new user account with customizable properties.
-- Add-ADUserToGroup: Add a user to a specified AD group.
-- Remove-ADUserFromGroup: Remove a user from a specified AD group.
-- Get-ADGroupMembers: Retrieve members of a specified AD group.
-- Grant-ADPermission: Grant permissions to an AD object.
-- Revoke-ADPermission: Revoke permissions from an AD object.
-- Enable-ADUserAccount: Enable a disabled user account.
-- Disable-ADUserAccount: Disable an active user account.
+- New-gMSAAccount: To create gMSA accounts from a csv input file
+- Set-ADPermission: To set delegated permission on Active Directory objects or OUs.
+- Remove-ADPermission: To remove a specific ACE entry from an active directory objects or OUs
+- Send-EmailMSGraph: To send emails using MSGraph API with Application registration and certificate based authentication.
+
 
 ## License
 This project is licensed under the MIT License.
