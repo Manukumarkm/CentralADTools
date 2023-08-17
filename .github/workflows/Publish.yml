@@ -1,14 +1,14 @@
-name: PublishModule
+name: Publish
 on: [workflow_dispatch]
 
 Jobs: 
     build:
-      name: PublishModule
+      name: Publish
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v1
-        - name: PublishModule
+        - name: Publish
             env: 
-              APIKEY: ${{ secrets.APIKEY}}
+              APIKEY: ${{ secrets.APIKEY }}
             run: .\Publish.ps1
             shell: pwsh
