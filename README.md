@@ -1,4 +1,4 @@
-# CentralADTools PowerShell Module
+# CentralADTools
 
 ## Overview
 
