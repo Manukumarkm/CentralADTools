@@ -17,3 +17,10 @@ You can easily install the CentralADTools module from the PowerShell Gallery usi
 
 ```powershell
 Install-Module -Name CentralADTools
+
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+For any questions or feedback, please contact me at manu_km@outlook.com.
