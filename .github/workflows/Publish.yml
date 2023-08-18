@@ -19,4 +19,4 @@ jobs:
         env:
           APIKEY: ${{ secrets.APIKEY }}
         run: |
-          pwsh -File Publish.ps1
+          powershell -Version 5.1 -File Publish.ps1
