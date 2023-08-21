@@ -17,6 +17,7 @@ CentralADTools is a comprehensive PowerShell module designed to streamline and s
 - Set-ADPermission: To set delegated permission on Active Directory objects or OUs.
 - Remove-ADPermission: To remove a specific ACE entry from an active directory objects or OUs
 - Send-EmailMSGraph: To send emails using MSGraph API with Application registration and certificate based authentication.
+- Get-AccessTonkenCERT : To generate AzureAD access token using Certificate and application ID.
 
 
 ## License
