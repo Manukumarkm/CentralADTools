@@ -19,6 +19,7 @@ CentralADTools is a comprehensive PowerShell module designed to streamline and s
 - Send-EmailMSGraph: To send emails using MSGraph API with Application registration and certificate based authentication.
 - Get-AccessTonkenCERT : To generate AzureAD access token using Certificate and application ID.
 - Get-AccessTokenSecret : To generate access token using Client secret and application ID.
+- Get-ApplicationDetailsGraphAPI : To fetch the application details from AzureAD via MSGraph API call.
 
 
 ## License
