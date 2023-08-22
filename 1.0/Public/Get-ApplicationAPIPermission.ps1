@@ -30,14 +30,14 @@ function Get-ApplicationAPIPermission{
         try {
                 Write-CentralADToolsLog -Type Info -LogData "[$($MyInvocation.MyCommand.Name)] Fetching the permission details in-progress"
                 $APIPermissions = Invoke-RestMethod -Uri $queryUrl -Headers $headers -Method Get
-                $PermissionAppRoleName = $APIPermissions.AppRoles | ?{$_.id -match $PermissionId}
-                $PermissionScopeName =  $APIPermissions.oauth2PermissionScopes | ?{$_.id -eq $PermissionId}
+                $PermissionAppRoleName = $APIPermissions.value.AppRoles | Where-Object{$_.id -match $PermissionId}
+                $PermissionScopeName =  $APIPermissions.value.oauth2PermissionScopes | Where-Object{$_.id -eq $PermissionId}
 
                 If($PermissionAppRoleName){
                         
                 $ResultData = [PSCustomObject]@{
-                                            APIName = $APIPermissions.DisplayName
-                                            ID = $APIPermissions.ID
+                                            APIName = $APIPermissions.value.DisplayName
+                                            ID = $APIPermissions.value.ID
                                             PermissionType = "Application"
                                             PermissionName = $PermissionAppRoleName.Value
                                             PermissionID = $PermissionAppRoleName.ID
@@ -47,8 +47,8 @@ function Get-ApplicationAPIPermission{
                 If($PermissionScopeName){
                         
                 $ResultData = [PSCustomObject]@{
-                                            APIName = $APIPermissions.DisplayName
-                                            ID = $APIPermissions.ID
+                                            APIName = $APIPermissions.value.DisplayName
+                                            ID = $APIPermissions.value.ID
                                             PermissionType = "Delegated"
                                             PermissionName = $PermissionScopeName.Value
                                             PermissionID = $PermissionScopeName.ID
