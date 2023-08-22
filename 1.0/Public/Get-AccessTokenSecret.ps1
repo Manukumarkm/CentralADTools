@@ -83,19 +83,24 @@ Function Get-AccessTokenSecret{
             } until (($I -eq $retryCount) -or ($ValidationStatus))
 
             
+            if ($AuthEndpointUrl -match "/oauth2/v2.0/token") {
+                $authBody = @{
+                    client_id = $ApplicationId
+                    client_secret = $ApplicationSecret
+                    scope = $Scope
+                    grant_type = 'client_credentials'
+                }
+            } else {
+                $authBody = @{
+                    client_id = $ApplicationId
+                    client_secret = $ApplicationSecret
+                    resource = $Scope
+                    grant_type = 'client_credentials'
+                }
+            }
+            
+            
 
-            
-            
-            
-            # OAuth Body Access Token Request
-            $authBody = @{
-                            client_id = $ApplicationId;
-                            client_secret = $ApplicationSecret;    
-                            # The v2 endpoint for OAuth uses scope instead of resource
-                            scope = $Scope   
-                            grant_type = 'client_credentials'
-                          }
-    
             # Parameters for OAuth Access Token Request
             $authParams = @{
                             URI = $AuthEndpointUrl #$oAuthTokenEndpoint
