@@ -20,6 +20,8 @@ CentralADTools is a comprehensive PowerShell module designed to streamline and s
 - Get-AccessTonkenCERT : To generate AzureAD access token using Certificate and application ID.
 - Get-AccessTokenSecret : To generate access token using Client secret and application ID.
 - Get-ApplicationDetailsGraphAPI : To fetch the application details from AzureAD via MSGraph API call.
+- Get-AADApplicationPermissionsDetails : To fetch the AzureAD application's API permission details.
+- Get-ApplicationAPIPermission : To get the azureAD API permissions in to a human readable format.
 
 
 ## License
